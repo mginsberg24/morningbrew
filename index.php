@@ -7,92 +7,6 @@
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 </head>
 
-<style>
-	body { 
-  background: url('morningbrew2.jpg') no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-
-
-}
-.title {
-	width: 500px;
-}
-
-#mc_embed_signup {
-	background-color:rgba(0, 0, 0, 0.2); 
-	clear:left; 
-	font:14px Helvetica,Arial,sans-serif;
-	width: 50%;
-	float: right;
-	/*margin-top: 35%;*/
-	 }
-
-.subscribe {
-	font-weight: bolder;
-	color: #3e66b1;
-	font-size: 25px;
-
-}
-.discription { 
-color: #3e66b1;
-text-align: center;
-
-}
-
-.discriptiondiv {
-display: block;
-margin: 0 auto;
-width: 80%;
-background-color:rgba(0, 0, 0, 0.8); 
-height: 100px;
-margin-top: 5%;
-
-
-}
-
-@media only screen and (max-width: 617px) {
-#mc_embed_signup {
-	margin-top: 40%;
-}
-}
-@media only screen and (min-width: 617px) {
-#mc_embed_signup {
-	margin-top: 20%;
-}
-}
-
-
-@media only screen and (min-width: 910px) {
-	#mc_embed_signup {
-		margin-top: 10%;
-	}
-}
-@media only screen and (max-width: 750px) {
-	#mc_embed_signup {
-		display: block;
-		margin-right: 20%;
-		
-	}
-}
-
-@media only screen and (max-width: 545px) {
-	.discriptiondiv {
-		height: 160px;
-	}
-	.title {
-		width: 350px;
-	}
-	}
-
-
-
-</style>
-
-
-
 
 <body>
 <div class="container">	
@@ -103,6 +17,14 @@ margin-top: 5%;
 	<!-- Begin MailChimp Signup Form -->
 <link href="//cdn-images.mailchimp.com/embedcode/classic-081711.css" rel="stylesheet" type="text/css">
 <div class="row">
+
+
+<div class="whiteboard">
+<h3 class = "discription col-md-12">"Morning Brew is a daily e-newsletter that serves as a one-stop shop to keep young business minds up to date on the business world"</h3>
+
+</div>
+
+
 <div id="mc_embed_signup">
 <form action="//wix.us10.list-manage.com/subscribe/post?u=088f40f633a7aa785423831b7&amp;id=ac5ce00057" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
     <div id="mc_embed_signup_scroll">
@@ -111,17 +33,17 @@ margin-top: 5%;
 	</div>
 <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
 <div class="mc-field-group">
-	<label for="mce-EMAIL">Email Address  <span class="asterisk">*</span>
+	<label class = "inputfield" for="mce-EMAIL"> 
 </label>
-	<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+	<input type="email" value="" name="EMAIL" placeholder = "Email Address" class="required email" id="mce-EMAIL">
 </div>
 <div class="mc-field-group">
-	<label for="mce-FNAME">First Name </label>
-	<input type="text" value="" name="FNAME" class="" id="mce-FNAME">
+	<label class = "inputfield" for="mce-FNAME"></label>
+	<input type="text" value="" name="FNAME" placeholder = "First Name" id="mce-FNAME">
 </div>
 <div class="mc-field-group">
-	<label for="mce-LNAME">Last Name </label>
-	<input type="text" value="" name="LNAME" class="" id="mce-LNAME">
+	<label class = "inputfield" for="mce-LNAME"></label>
+	<input type="text" value="" name="LNAME" placeholder = "Last Name" class="" id="mce-LNAME">
 </div>
 	<div id="mce-responses" class="clear">
 		<div class="response" id="mce-error-response" style="display:none"></div>
