@@ -12,6 +12,7 @@ body {
 }
 
 .title {
+	margin-top: 5px;
 	width: 500px;
 
 }
@@ -31,8 +32,16 @@ body {
 
 }
 
-.error, .success {
+.error {
 	color: red;
+	font:16px Helvetica,Arial,sans-serif;
+	font-weight: 500;
+	padding-bottom: 5px;
+	margin-left: 15px;
+}
+
+.success {
+	color: green;
 	font:16px Helvetica,Arial,sans-serif;
 	font-weight: 500;
 	padding-bottom: 5px;

@@ -15,7 +15,7 @@ $fName = basename(__FILE__);
 <body>
 	<div class="content">
 		<img class ="title" src="img/title.png" alt="morningbrew title">
-		<img class = "mug"src="img/MB_mug.png" alt="">
+		<img class = "mug" src="img/MB_mug.png" alt="">
 	<h1>Past Articles</h1>
 	<div class="links">
 		

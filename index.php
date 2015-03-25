@@ -8,11 +8,12 @@ $subscriberemailID = $_POST["EMAIL"];
 $retval = $api->listSubscribe( $listId, $subscriberemailID);
 if ($api->errorCode){
 	$_SESSION['error'] = "$subscriberemailID is already subscribed.";
-	
 	header('Location: index.php');
 	exit();
 } else {
 $_SESSION['success'] = "You successfully subscribed!";
+header('Location: index.php');
+	exit();
 }
 }
 $fName = basename(__FILE__);
@@ -45,8 +46,8 @@ $fName = basename(__FILE__);
 					echo('<p class = \'error\'">'.htmlentities($_SESSION['error'])."</p>\n");
 					unset($_SESSION['error']);
 					}
-					if ( isset($_SESSION['success']) ) {
-					echo('<p cclass = \'success\'">'.htmlentities($_SESSION['success'])."</p>\n");
+					elseif ( isset($_SESSION['success']) ) {
+					echo('<p class = \'success\'">'.htmlentities($_SESSION['success'])."</p>\n");
 					unset($_SESSION['success']);
 					}
 					?>
