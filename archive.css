@@ -3,27 +3,32 @@
 }
 h1 {
 	text-align: center;
+	font: normal normal normal din-next-w01-light,din-next-w02-light,din-next-w10-light,sans-serif;
+
 }
 
 .links a {
 	display: block;
-	padding: 5px;
+	padding: 2px;
 	text-align: center;
+	font: normal normal normal 16px/1.4em din-next-w01-light,din-next-w02-light,din-next-w10-light,sans-serif;
 }
 
-.text  {
-	text-align: center;
-	margin-top: 15px;
-	color: white;
-	font: normal normal normal 16px/1.4em din-next-w01-light,din-next-w02-light,din-next-w10-light,sans-serif;;
-	display: inline-block;
 
-}
+
 .title {
 	width: 500px;
 	margin: 0 auto;
 	display: block;
-	margin-bottom: 3%;
+	margin-bottom: 2%;
+
+}
+
+.mug {
+	width: 140px;
+
+	margin: 0 auto;
+	display: block;
 
 }
 

@@ -7,25 +7,15 @@ $api = new MCAPI($apikey);
 $subscriberemailID = $_POST["EMAIL"];
 $retval = $api->listSubscribe( $listId, $subscriberemailID);
 if ($api->errorCode){
-	$_SESSION['error'] =  "You already subscribed";
+	$_SESSION['error'] = "$subscriberemailID is already subscribed.";
+	
 	header('Location: index.php');
 	exit();
 } else {
-$_SESSION['success'] = "You subscribed!";
+$_SESSION['success'] = "You successfully subscribed!";
 }
 }
-if ( isset($_SESSION['error']) ) {
-echo('<p style="color: red;">'.htmlentities($_SESSION['error'])."</p>\n");
-unset($_SESSION['error']);
-}
-if ( isset($_SESSION['success']) ) {
-echo('<p style="color: green;">'.htmlentities($_SESSION['success'])."</p>\n");
-unset($_SESSION['success']);
-}
-
-
 $fName = basename(__FILE__);
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -39,7 +29,7 @@ $fName = basename(__FILE__);
 	<body>
 		<div class="content">
 			
-			<img class ="title" src="title.png" alt="morningbrew title">
+			<img class ="title" src="img/title.png" alt="morningbrew title">
 			<!-- Begin MailChimp Signup Form -->
 			<link href="//cdn-images.mailchimp.com/embedcode/classic-081711.css" rel="stylesheet" type="text/css">
 			<div class="row">
@@ -50,6 +40,16 @@ $fName = basename(__FILE__);
 				<!-- Begin MailChimp Signup Form -->
 				<!-- <link href="//cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css"> -->
 				<div id="signup">
+					<?php
+					if ( isset($_SESSION['error']) ) {
+					echo('<p class = \'error\'">'.htmlentities($_SESSION['error'])."</p>\n");
+					unset($_SESSION['error']);
+					}
+					if ( isset($_SESSION['success']) ) {
+					echo('<p cclass = \'success\'">'.htmlentities($_SESSION['success'])."</p>\n");
+					unset($_SESSION['success']);
+					}
+					?>
 					<form action="index.php" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form">
 						<div id="mc_embed_signup_scroll">
 							
@@ -65,16 +65,13 @@ $fName = basename(__FILE__);
 			</div>
 			<!--End mc_embed_signup-->
 			
-		
-		<div class="discriptiondiv">
-			<h3 class = "discription col-md-12">"Morning Brew is a daily e-newsletter that serves as a one-stop shop to keep young business minds up to date on the business world"</h3>
-		</div>
-
-	<?php 
-	require('footer.php');
-
-	 ?>
-
+			
+			<div class="discriptiondiv">
+				<h3 class = "discription col-md-12">"Morning Brew is a daily e-newsletter that serves as a one-stop shop to keep young business minds up to date on the business world"</h3>
+			</div>
+			<?php
+			require('footer.php');
+			?>
 		</div>
 	</body>
 </html>
