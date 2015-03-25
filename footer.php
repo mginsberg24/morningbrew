@@ -21,8 +21,8 @@
 			<a href="mailto:?subject=I wanted you to see MorningBrew&amp;body=Check out this site http://www.morningbrewdaily.com."><img class = "logo" src="img/email.png" alt=""></a>
 		</div>
 		<div class="contact col-xs-5">
-			<p>Contact Us @ <br>
-			morningbrew@gmail.com</p>
+			<p>Contact us @ <br>
+			alexlieb@umich.edu</p>
 		</div>
 	</div>
 </footer> 

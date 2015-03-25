@@ -1,13 +1,23 @@
-.content {
-	margin-left: 20px;
+html, .content{
+	background-color: #e2d7c3;
+	-webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
+
+/*.content {
+	margin-left: 20px;
+}*/
+
+
 h1 {
 	text-align: center;
 	font: normal normal normal din-next-w01-light,din-next-w02-light,din-next-w10-light,sans-serif;
 
 }
 
-.links a {
+.links  {
 	display: block;
 	padding: 2px;
 	text-align: center;
