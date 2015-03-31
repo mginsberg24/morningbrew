@@ -22,7 +22,7 @@
 		</div>
 		<div class="contact col-xs-5">
 			<p>Contact us @ <br>
-			alexlieb@umich.edu</p>
+			brewteam@morningbrewdaily.com</p>
 		</div>
 	</div>
 </footer> 
