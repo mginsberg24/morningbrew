@@ -21,6 +21,7 @@ $fName = basename(__FILE__);
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+	<meta name="google-site-verification" content="t5TVR35UCIZQuShSCA1NdLTQD4tYF-KzRjP9AkzUUQI" />
 		<meta charset="UTF-8">
 		<title>Morning Brew</title>
 		<link rel="stylesheet" href="style.css">
