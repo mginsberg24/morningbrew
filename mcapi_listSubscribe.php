@@ -11,8 +11,10 @@ $api = new MCAPI($apikey);
 // until the link contained in it is clicked!
 
 $subscriberemailID = $_POST["EMAIL"];
+$subscriberschoolID = $_POST['SCHOOL'];
+$subscriberIP = $_POST['IP'];
 
-$retval = $api->listSubscribe( $listId, $subscriberemailID);
+$retval = $api->listSubscribe( $listId, $subscriberemailID, $subscriberschoolID, $subscriberIP);
 
 if ($api->errorCode){
 	echo "Unable to load listSubscribe()!\n";

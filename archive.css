@@ -12,15 +12,17 @@ html, .content{
 
 
 h1 {
-	text-align: center;
+	/*text-align: center;*/
 	font: normal normal normal din-next-w01-light,din-next-w02-light,din-next-w10-light,sans-serif;
 
 }
 
 .links  {
 	display: block;
-	padding: 2px;
-	text-align: center;
+	/*position: relative;*/
+	/*margin: auto;*/
+	width: 100%;
+	padding: 0 20px;
 	font: normal normal normal 16px/1.4em din-next-w01-light,din-next-w02-light,din-next-w10-light,sans-serif;
 }
 
