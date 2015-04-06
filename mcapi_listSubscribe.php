@@ -5,7 +5,7 @@ require_once 'config.inc.php'; //contains apikey
 
 $api = new MCAPI($apikey);
 
-// $merge_vars = array('FNAME'=>$FNAME);
+$merge_vars = array('FNAME'=>$FNAME);
 
 // By default this sends a confirmation email - you will not see new members
 // until the link contained in it is clicked!

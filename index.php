@@ -1,11 +1,13 @@
 <?php
 session_start();
-if (isset($_POST['submit']) && strlen($_POST['EMAIL']) > 2 ) {
+if (isset($_POST['submit']) && isset($_POST['EMAIL']) && isset($_POST['MMERGE4']) ) {
 require_once 'MCAPI.class.php';
 require_once 'config.inc.php'; //contains apikey
 $api = new MCAPI($apikey);
 $subscriberemailID = $_POST["EMAIL"];
-$retval = $api->listSubscribe( $listId, $subscriberemailID);
+$subscriberschoolID = $_POST["MMERGE4"];
+$merge_vars = array('school'=> $subscriberschoolID);
+$retval = $api->listSubscribe( $listId, $subscriberemailID, $subscriberschoolID);
 if ($api->errorCode){
 	$_SESSION['error'] = "$subscriberemailID is already subscribed.";
 	header('Location: index.php');
@@ -17,17 +19,24 @@ header('Location: index.php');
 }
 }
 $fName = basename(__FILE__);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+		 <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html">
 	<meta name="google-site-verification" content="t5TVR35UCIZQuShSCA1NdLTQD4tYF-KzRjP9AkzUUQI" />
 		<meta charset="UTF-8">
 		<title>Morning Brew</title>
 		<link rel="stylesheet" href="style.css">
 		<link href="css/bootstrap.min.css" rel="stylesheet">
 		<link rel="stylesheet" href="footer.css">
-		<script language="JavaScript" src="http://www.geoplugin.net/javascript.gp" type="text/javascript"></script>
+		<link rel="stylesheet" type="text/css" media="all" href="css/style.css">
+  <link rel="stylesheet" type="text/css" media="all" href="css/selectize.css">
+   <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+  <script type="text/javascript" src="js/selectize.min.js"></script>
+
 
 	</head>
 	<body>
@@ -67,19 +76,15 @@ $fName = basename(__FILE__);
 							<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder=" *Email" required>
 							</p>
 							<p>
-								<select name="SCHOOL">
+							   <select name="MMERGE4" id="school">
 									<option value="">- Please select a University -</option>
-									<option value="Umich" >University of Michigan</option>
-									<option value="Upenn" >University of Pennsylvania</option>
-									<option value="USC">University of Southern California</option>
-									<option value="NWU">Northwestern University </option>
-									<option value="NYU">New York University</option>
-									<option value="UI">University of Indiana</option>
-									<option value="Other" >Other</option>
+									<option value="New York University">New York University</option>
+									<option value="Northwestern University">Northwestern University </option>
+									<option value="University of Southern California">University of Southern California</option>
+									<option value="University of Michigan" >University of Michigan</option>
+									<option value="University of Pennsylvania" >University of Pennsylvania</option>
+									<option value="Other">Other</option>
 								</select>
-							</p>
-							<p>
-							<input type="text" name = "IP" value = <?php echo $_SERVER['REMOTE_ADDR'];?>  >
 							</p>
 							<div class="clear"><input type="submit" value="Subscribe" name="submit" id="mc-embedded-subscribe" class="subscribe button"></div>
 							</div>
@@ -98,5 +103,12 @@ $fName = basename(__FILE__);
 			require('footer.php');
 			?>
 		</div>
+		 
+<script type="text/javascript">
+$(function() {
+   $('#school').selectize({create: true});
+});
+</script>
+
 	</body>
 </html>
