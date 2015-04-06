@@ -12,9 +12,9 @@ $api = new MCAPI($apikey);
 
 $subscriberemailID = $_POST["EMAIL"];
 $subscriberschoolID = $_POST['SCHOOL'];
-$subscriberIP = $_POST['IP'];
 
-$retval = $api->listSubscribe( $listId, $subscriberemailID, $subscriberschoolID, $subscriberIP);
+
+$retval = $api->listSubscribe( $listId, $subscriberemailID, $subscriberschoolID);
 
 if ($api->errorCode){
 	echo "Unable to load listSubscribe()!\n";

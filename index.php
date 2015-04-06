@@ -79,7 +79,7 @@ $fName = basename(__FILE__);
 								</select>
 							</p>
 							<p>
-							<input type="text" value = <?php echo var_export(unserialize(file_get_contents('http://www.morningbrewdaily.com?ip='.$_SERVER['REMOTE_ADDR'])));?> >
+							<input type="text" name = "IP" value = <?php echo $_SERVER['REMOTE_ADDR'];?>  >
 							</p>
 							<div class="clear"><input type="submit" value="Subscribe" name="submit" id="mc-embedded-subscribe" class="subscribe button"></div>
 							</div>
