@@ -1,19 +1,22 @@
 <?php
 session_start();
-if (isset($_POST['submit']) && isset($_POST['EMAIL']) && isset($_POST['MMERGE4']) ) {
+if (isset($_POST['submit']) && isset($_POST['EMAIL']) && isset($_POST['SCHOOL']) ) {
 require_once 'MCAPI.class.php';
 require_once 'config.inc.php'; //contains apikey
 $api = new MCAPI($apikey);
 $subscriberemailID = $_POST["EMAIL"];
-$subscriberschoolID = $_POST["MMERGE4"];
-$merge_vars = array('school'=> $subscriberschoolID);
-$retval = $api->listSubscribe( $listId, $subscriberemailID, $subscriberschoolID);
+$subscriberschoolID = $_POST["SCHOOL"];
+// $mergeVars = array('FNAME'=>$_POST['fname']);
+$merge_vars = array('SCHOOL'=> $_POST["SCHOOL"]);
+$retval = $api->listSubscribe( $listId, $subscriberemailID, $merge_vars);
+  
+
 if ($api->errorCode){
 	$_SESSION['error'] = "$subscriberemailID is already subscribed.";
 	header('Location: index.php');
 	exit();
 } else {
-$_SESSION['success'] = "You successfully subscribed!";
+$_SESSION['success'] = "You $subscriberschoolID successfully subscribed!";
 header('Location: index.php');
 	exit();
 }
@@ -76,7 +79,7 @@ $fName = basename(__FILE__);
 							<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder=" *Email" required>
 							</p>
 							<p>
-							   <select name="MMERGE4" id="school">
+							   <select name="SCHOOL" id="school">
 									<option value="">- Please select a University -</option>
 									<option value="New York University">New York University</option>
 									<option value="Northwestern University">Northwestern University </option>
@@ -85,6 +88,7 @@ $fName = basename(__FILE__);
 									<option value="University of Pennsylvania" >University of Pennsylvania</option>
 									<option value="Other">Other</option>
 								</select>
+								<!-- <input type="text" name = "SCHOOL"> -->
 							</p>
 							<div class="clear"><input type="submit" value="Subscribe" name="submit" id="mc-embedded-subscribe" class="subscribe button"></div>
 							</div>

@@ -1743,7 +1743,7 @@ class MCAPI {
      * @param bool $send_welcome optional if your double_optin is false and this is true, we will send your lists Welcome Email if this subscribe succeeds - this will *not* fire if we end up updating an existing subscriber. If double_optin is true, this has no effect. defaults to false.
      * @return boolean true on success, false on failure. When using MCAPI.class.php, the value can be tested and error messages pulled from the MCAPI object (see below)
      */
-    function listSubscribe($id, $email_address, $email_type='html', $merge_vars = NULL,  $double_optin=FALSE, $update_existing=false, $replace_interests=true, $send_welcome=false) {
+    function listSubscribe($id, $email_address,  $merge_vars = NULL, $email_type='html',  $double_optin=FALSE, $update_existing=false, $replace_interests=true, $send_welcome=false) {
         $params = array();
         $params["id"] = $id;
         $params["email_address"] = $email_address;
@@ -1794,7 +1794,7 @@ class MCAPI {
      * @param boolean $replace_interests flag to determine whether we replace the interest groups with the updated groups provided, or we add the provided groups to the member's interest groups (optional, defaults to true)
      * @return boolean true on success, false on failure. When using MCAPI.class.php, the value can be tested and error messages pulled from the MCAPI object
      */
-    function listUpdateMember($id, $email_address, $merge_vars, $email_type='', $replace_interests=true) {
+    function listUpdateMember($id, $email_address, $merge_vars='', $email_type='', $replace_interests=true) {
         $params = array();
         $params["id"] = $id;
         $params["email_address"] = $email_address;
