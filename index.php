@@ -81,6 +81,7 @@ $fName = basename(__FILE__);
 							<p>
 							   <select name="SCHOOL" id="school" required>
 									<option value="">- Please select a University -</option>
+									<option value="Emory University">Emory University</option>
 									<option value="Indiana University">Indiana University</option>
 									<option value="New York University">New York University</option>
 									<option value="Northwestern University">Northwestern University </option>
