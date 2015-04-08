@@ -81,11 +81,12 @@ $fName = basename(__FILE__);
 							<p>
 							   <select name="SCHOOL" id="school">
 									<option value="">- Please select a University -</option>
+									<option value="Indiana University">Indiana University</option>
 									<option value="New York University">New York University</option>
 									<option value="Northwestern University">Northwestern University </option>
-									<option value="University of Southern California">University of Southern California</option>
 									<option value="University of Michigan" >University of Michigan</option>
 									<option value="University of Pennsylvania" >University of Pennsylvania</option>
+									<option value="University of Southern California">University of Southern California</option>
 									<option value="Other">Other</option>
 								</select>
 								<!-- <input type="text" name = "SCHOOL"> -->
@@ -109,9 +110,12 @@ $fName = basename(__FILE__);
 		</div>
 		 
 <script type="text/javascript">
-$(function() {
-   $('#school').selectize({create: true});
+$('#school').selectize({
+    // sortField: 'text'
 });
+
+
+
 </script>
 
 	</body>
