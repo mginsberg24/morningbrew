@@ -79,7 +79,7 @@ $fName = basename(__FILE__);
 							<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder=" *Email" required>
 							</p>
 							<p>
-							   <select name="SCHOOL" id="school">
+							   <select name="SCHOOL" id="school" required>
 									<option value="">- Please select a University -</option>
 									<option value="Indiana University">Indiana University</option>
 									<option value="New York University">New York University</option>
