@@ -2,7 +2,7 @@
 session_start();
 require_once 'MCAPI.class.php';
 require_once 'config.inc.php'; //contains apikey
-if (isset($_POST['submit']) && isset($_POST['EMAIL']) && isset($_POST['SCHOOL'])  ) {
+if (isset($_POST['submit']) ) {
 	      if ( $_POST["SCHOOL"] == '0' ) {
             $_SESSION['error'] = 'All fields are required';
            
@@ -97,6 +97,7 @@ $fName = basename(__FILE__);
 									<option value="University of Michigan" >University of Michigan</option>
 									<option value="University of Notre Dame" >University of Notre Dame</option>
 									<option value="University of Pennsylvania" >University of Pennsylvania</option>
+									<option value="University of Texas" >University of Texas</option>
 									<option value="University of Southern California">University of Southern California</option>
 									<option value="Vanderbilt University">Vanderbilt University</option>
 									<option value="Other">Other</option>
