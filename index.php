@@ -3,7 +3,7 @@ session_start();
 require_once 'MCAPI.class.php';
 require_once 'config.inc.php'; //contains apikey
 if (isset($_POST['submit']) && isset($_POST['EMAIL']) && isset($_POST['SCHOOL'])  ) {
-	      if ( strlen($_POST['EMAIL']) < 1 || $_POST["SCHOOL"] == 0 ) {
+	      if ( $_POST["SCHOOL"] == '0' ) {
             $_SESSION['error'] = 'All fields are required';
            
             header("Location: index.php");
@@ -89,7 +89,7 @@ $fName = basename(__FILE__);
 							</p>
 							<p>
 							   <select name="SCHOOL"  class="selectpicker" title = "- Please select a University -" id="school" data-live-search="true"  data-dropup-auto="false" required>
-									<option data-hidden = true value="0"></option>
+									<option value = "0" data-hidden = true></option>
 									<option value="Emory University">Emory University</option>
 									<option value="Indiana University">Indiana University</option>
 									<option value="New York University">New York University</option>
