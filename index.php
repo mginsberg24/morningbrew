@@ -1,22 +1,28 @@
 <?php
 session_start();
-if (isset($_POST['submit']) && isset($_POST['EMAIL']) && isset($_POST['SCHOOL']) ) {
 require_once 'MCAPI.class.php';
 require_once 'config.inc.php'; //contains apikey
+if (isset($_POST['submit']) && isset($_POST['EMAIL']) && isset($_POST['SCHOOL'])  ) {
+	      if ( strlen($_POST['EMAIL']) < 1 || $_POST["SCHOOL"] == 0 ) {
+            $_SESSION['error'] = 'All fields are required';
+           
+            header("Location: index.php");
+            return;
+        }
 $api = new MCAPI($apikey);
 $subscriberemailID = $_POST["EMAIL"];
 $subscriberschoolID = $_POST["SCHOOL"];
 // $mergeVars = array('FNAME'=>$_POST['fname']);
 $merge_vars = array('SCHOOL'=> $_POST["SCHOOL"]);
 $retval = $api->listSubscribe( $listId, $subscriberemailID, $merge_vars);
-  
+
 
 if ($api->errorCode){
 	$_SESSION['error'] = "$subscriberemailID is already subscribed.";
 	header('Location: index.php');
 	exit();
 } else {
-$_SESSION['success'] = "You $subscriberschoolID successfully subscribed!";
+$_SESSION['success'] = "You successfully subscribed!";
 header('Location: index.php');
 	exit();
 }
@@ -36,10 +42,13 @@ $fName = basename(__FILE__);
 		<link href="css/bootstrap.min.css" rel="stylesheet">
 		<link rel="stylesheet" href="footer.css">
 		<link rel="stylesheet" type="text/css" media="all" href="css/style.css">
+		<link rel="stylesheet" href="css/bootstrap-select.css">
+		<!-- <link rel="stylesheet" href="css/bootstrap-select.min.css"> -->
   <link rel="stylesheet" type="text/css" media="all" href="css/selectize.css">
    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
   <script type="text/javascript" src="js/selectize.min.js"></script>
-
+<script type="text/javascript" src="js/bootstrap-select.min.js"></script>
+<script type="text/javascript" src="js/bootstrap-select.js"></script>
 
 	</head>
 	<body>
@@ -79,17 +88,24 @@ $fName = basename(__FILE__);
 							<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder=" *Email" required>
 							</p>
 							<p>
-							   <select name="SCHOOL" id="school" required>
-									<option value="">- Please select a University -</option>
+							   <select name="SCHOOL"  class="selectpicker" title = "- Please select a University -" id="school" data-live-search="true"  data-dropup-auto="false" required>
+									<option data-hidden = true value="0"></option>
 									<option value="Emory University">Emory University</option>
 									<option value="Indiana University">Indiana University</option>
 									<option value="New York University">New York University</option>
 									<option value="Northwestern University">Northwestern University </option>
 									<option value="University of Michigan" >University of Michigan</option>
+									<option value="University of Notre Dame" >University of Notre Dame</option>
 									<option value="University of Pennsylvania" >University of Pennsylvania</option>
 									<option value="University of Southern California">University of Southern California</option>
+									<option value="Vanderbilt University">Vanderbilt University</option>
 									<option value="Other">Other</option>
 								</select>
+								 <!--  <select class="selectpicker">
+    										<option>Mustard</option>
+    										<option>Ketchup</option>
+    										<option>Relish</option>
+  									</select> -->
 								<!-- <input type="text" name = "SCHOOL"> -->
 							</p>
 							<div class="clear"><input type="submit" value="Subscribe" name="submit" id="mc-embedded-subscribe" class="subscribe button"></div>
@@ -109,15 +125,14 @@ $fName = basename(__FILE__);
 			require('footer.php');
 			?>
 		</div>
-		 
-<script type="text/javascript">
-$('#school').selectize({
-    // sortField: 'text'
-});
-
-
-
-</script>
+ <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+      <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
+      <script src="http://silviomoreto.github.io/bootstrap-select/javascripts/bootstrap-select.js"></script>
+      <script type="text/javascript">
+          $(document).ready(function(e) {
+              $('.selectpicker').selectpicker();
+          });
+      </script>
 
 	</body>
 </html>

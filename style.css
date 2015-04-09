@@ -102,7 +102,9 @@ font: normal normal normal 15px/1.4em din-next-w01-light,din-next-w02-light,din-
  font-family: helvetica;
 }
 
-
+.text {
+	color: black !important;
+}
 
 
 
