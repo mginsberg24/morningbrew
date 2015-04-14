@@ -94,6 +94,7 @@ $fName = basename(__FILE__);
 									<option value="Indiana University">Indiana University</option>
 									<option value="New York University">New York University</option>
 									<option value="Northwestern University">Northwestern University </option>
+									<option value="Penn State University">Penn State University </option>
 									<option value="University of Michigan" >University of Michigan</option>
 									<option value="University of Notre Dame" >University of Notre Dame</option>
 									<option value="University of Pennsylvania" >University of Pennsylvania</option>
