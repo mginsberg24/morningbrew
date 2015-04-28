@@ -12,8 +12,8 @@
 			}?>></a>
 		</div>
 		<div class="col-xs-1">
-			<a href="https://twitter.com/MorningBrew" target="_blank"><img class = "logo" src="img/twitter.png" alt=""></a>
-		</div>
+			<a href="https://twitter.com/morningbrew_" target="_blank"><img class = "logo" src="img/twitter.png" alt=""></a>
+		</div> 
 		<div class="col-xs-1">
 			<a href="https://www.facebook.com/MorningBrewDaily" target="_blank"><img class = "logo" src="img/facebook.png" alt=""></a>
 		</div>

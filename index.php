@@ -90,6 +90,8 @@ $fName = basename(__FILE__);
 							<p>
 							   <select name="SCHOOL"  class="selectpicker" title = "- Please select a University -" id="school" data-live-search="true"  data-dropup-auto="false" required>
 									<option value = "0" data-hidden = true></option>
+									<option value="Business Professional">Business Professional</option>
+									<option value="Cornell University">Cornell University</option>
 									<option value="Emory University">Emory University</option>
 									<option value="Indiana University">Indiana University</option>
 									<option value="New York University">New York University</option>
