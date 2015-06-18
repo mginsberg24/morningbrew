@@ -87,7 +87,7 @@ $fName = basename(__FILE__);
 							<p>
 							<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder=" *Email" required>
 							</p>
-							<p>
+					<!-- 		<p>
 							   <select name="SCHOOL"  class="selectpicker" title = "- Please select a University -" id="school" data-live-search="true"  data-dropup-auto="false" required>
 									<option value = "0" data-hidden = true></option>
 									<option value="Business Professional">Business Professional</option>
@@ -105,13 +105,8 @@ $fName = basename(__FILE__);
 									<option value="Vanderbilt University">Vanderbilt University</option>
 									<option value="Other">Other</option>
 								</select>
-								 <!--  <select class="selectpicker">
-    										<option>Mustard</option>
-    										<option>Ketchup</option>
-    										<option>Relish</option>
-  									</select> -->
-								<!-- <input type="text" name = "SCHOOL"> -->
-							</p>
+								 
+							</p> --> 
 							<div class="clear"><input type="submit" value="Subscribe" name="submit" id="mc-embedded-subscribe" class="subscribe button"></div>
 							</div>
 
